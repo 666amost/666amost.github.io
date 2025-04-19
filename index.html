@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denkyu Sinar Abadi - Stabilizer, Transformer & Battery Charger Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .hamburger {
+            transition: all 0.3s ease;
+        }
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        .feature-icon {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+    <!-- Header with Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-2">DSA</div>
+                        <span class="text-xl font-bold text-blue-600">Denkyu Sinar Abadi</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Products</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+                
+                <!-- Mobile Hamburger Menu -->
+                <div class="md:hidden">
+                    <button id="hamburger" class="hamburger focus:outline-none">
+                        <div class="hamburger-line w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300"></div>
+                        <div class="hamburger-line w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300"></div>
+                        <div class="hamburger-line w-6 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden bg-white">
+                <div class="flex flex-col space-y-3 py-4 px-4">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Products</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Premium <span class="text-blue-600">Power Solutions</span> for Your Needs</h1>
+                    <p class="text-lg text-gray-600 mb-8">Specializing in high-quality stabilizers, transformers, and battery chargers to ensure reliable power for your home and business.</p>
+                    <div class="flex space-x-4">
+                        <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Our Products</a>
+                        <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">Contact Us</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1606228281092-fbe4d9f4c0b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Power Solutions" class="rounded-xl shadow-xl w-full max-w-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm flex items-start">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mr-6">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">High Quality</h3>
+                        <p class="text-gray-600">Our products are manufactured with premium materials and strict quality control.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm flex items-start">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mr-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Reliable Protection</h3>
+                        <p class="text-gray-600">Safeguard your equipment from voltage fluctuations and power surges.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm flex items-start">
+                    <div class="feature-icon w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mr-6">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Expert Support</h3>
+                        <p class="text-gray-600">Our team provides professional advice and after-sales service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our <span class="text-blue-600">Products</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">High-quality power solutions for residential, commercial, and industrial applications.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md">
+                    <div class="h-48 overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1603732551658-5fabbafa84eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Stabilizer" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Voltage Stabilizers</h3>
+                    <p class="text-gray-600 mb-4">Automatic voltage regulators that maintain consistent power output despite input fluctuations.</p>
+                    <div class="flex justify-between items-center">
+                        <a href="#contact" class="text-blue-600 font-medium flex items-center">
+                            Enquire Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">In Stock</span>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md">
+                    <div class="h-48 overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1603732551680-5b9988c6d769?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Transformer" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Transformers</h3>
+                    <p class="text-gray-600 mb-4">Efficient power transformers for voltage conversion in various industrial applications.</p>
+                    <div class="flex justify-between items-center">
+                        <a href="#contact" class="text-blue-600 font-medium flex items-center">
+                            Enquire Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">In Stock</span>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md">
+                    <div class="h-48 overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Battery Charger" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Battery Chargers</h3>
+                    <p class="text-gray-600 mb-4">Intelligent charging systems for various battery types with protection features.</p>
+                    <div class="flex justify-between items-center">
+                        <a href="#contact" class="text-blue-600 font-medium flex items-center">
+                            Enquire Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">In Stock</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#products" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Facility" class="rounded-xl shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">About <span class="text-blue-600">Denkyu Sinar Abadi</span></h2>
+                    <p class="text-gray-600 mb-6">Since our establishment, Denkyu Sinar Abadi has been committed to providing high-quality power solutions including stabilizers, transformers, and battery chargers to meet the growing demands of our customers.</p>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <p class="text-gray-700 font-medium">Over 10 years of industry experience</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <p class="text-gray-700 font-medium">Wide range of products for various applications</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <p class="text-gray-700 font-medium">Commitment to quality and customer satisfaction</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our <span class="text-blue-600">Services</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive solutions to meet all your power needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Product Customization</h3>
+                    <p class="text-gray-600 mb-4">We offer customized power solutions tailored to your specific requirements and applications.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-truck text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Nationwide Delivery</h3>
+                    <p class="text-gray-600 mb-4">Reliable delivery services across Indonesia to ensure your products arrive safely and on time.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Installation Support</h3>
+                    <p class="text-gray-600 mb-4">Professional installation services to ensure optimal performance of your power equipment.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-cog text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Technical Support</h3>
+                    <p class="text-gray-600 mb-4">Expert technical assistance and troubleshooting for all our products.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Warranty Services</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive warranty coverage for all our products to give you peace of mind.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Consultation</h3>
+                    <p class="text-gray-600 mb-4">Professional advice to help you select the right power solutions for your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Client <span class="text-blue-100">Testimonials</span></h2>
+                <p class="max-w-2xl mx-auto text-blue-100">What our customers say about our products and services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Budi Santoso</h4>
+                            <p class="text-blue-100 text-sm">Factory Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-50">"The industrial stabilizers we purchased from Denkyu Sinar Abadi have been running flawlessly for over 2 years now. Excellent product quality and after-sales support."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dewi Lestari</h4>
+                            <p class="text-blue-100 text-sm">Hotel Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-50">"We've been using Denkyu's voltage stabilizers in all our hotel branches. They've significantly reduced our equipment maintenance costs. Highly recommended!"</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Hendra Wijaya</h4>
+                            <p class="text-blue-100 text-sm">IT Company Director</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-50">"The battery charging systems we purchased for our data center have been extremely reliable. The technical support team is responsive and knowledgeable."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star text-yellow-300 mr-1"></i>
+                        <i class="fas fa-star-half-alt text-yellow-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-600 text-white p-12">
+                        <h2 class="text-3xl font-bold mb-6">Contact <span class="text-blue-100">Us</span></h2>
+                        <p class="mb-8 text-blue-100">Have questions about our products or need a quote? Reach out to our team.</p>
+                        
+                        <div class="mb-6 flex items-start">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Our Location</h4>
+                                <p class="text-blue-100">Jl. Raya Cikarang - Cibarusah No. 27<br>Cikarang Selatan, Bekasi<br>Jawa Barat, Indonesia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6 flex items-start">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email Us</h4>
+                                <p class="text-blue-100">info@denkyusinarabadi.com<br>sales@denkyusinarabadi.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Call Us</h4>
+                                <p class="text-blue-100">+62 21 1234 5678<br>Mon-Fri, 8am-5pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-12">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="flex items-center mb-6">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-2">DSA</div>
+                        <span class="text-xl font-bold">Denkyu Sinar Abadi</span>
+                    </a>
+                    <p class="text-gray-400">Specialists in voltage stabilizers, transformers, and battery charging systems for residential, commercial, and industrial applications.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Voltage Stabilizers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Transformers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Battery Chargers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Industrial Power Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-blue-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-pink-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter</p>
+                    <form class="mt-4 flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2023 Denkyu Sinar Abadi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('open');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${email} or ${phone}.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Active link highlighting as user scrolls
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-blue-600');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -324,7 +324,7 @@ const Page: React.FC = () => {
                 </div>
               </div>
               <p className="text-blue-50">
-                "Stabilizer industri yang kami beli dari Denkyu Sinar Abadi telah berjalan dengan sempurna selama lebih dari 2 tahun. Kualitas produk dan dukungan purna jual sangat baik."
+                &ldquo;Stabilizer industri yang kami beli dari Denkyu Sinar Abadi telah berjalan dengan sempurna selama lebih dari 2 tahun. Kualitas produk dan dukungan purna jual sangat baik.&rdquo;
               </p>
               <div className="flex mt-4">
                 <i className="fas fa-star text-yellow-300 mr-1"></i>
@@ -351,7 +351,7 @@ const Page: React.FC = () => {
                 </div>
               </div>
               <p className="text-blue-50">
-                "Kami telah menggunakan stabilizer tegangan dari Denkyu di semua cabang hotel kami. Ini telah mengurangi biaya perawatan peralatan kami secara signifikan. Sangat direkomendasikan!"
+                &ldquo;Kami telah menggunakan stabilizer tegangan dari Denkyu di semua cabang hotel kami. Ini telah mengurangi biaya perawatan peralatan kami secara signifikan. Sangat direkomendasikan!&rdquo;
               </p>
               <div className="flex mt-4">
                 <i className="fas fa-star text-yellow-300 mr-1"></i>
@@ -378,7 +378,7 @@ const Page: React.FC = () => {
                 </div>
               </div>
               <p className="text-blue-50">
-                "Sistem pengisian baterai yang kami beli untuk pusat data kami sangat andal. Tim dukungan teknis responsif dan berpengetahuan luas."
+                &ldquo;Sistem pengisian baterai yang kami beli untuk pusat data kami sangat andal. Tim dukungan teknis responsif dan berpengetahuan luas.&rdquo;
               </p>
               <div className="flex mt-4">
                 <i className="fas fa-star text-yellow-300 mr-1"></i>
